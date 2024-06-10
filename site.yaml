@@ -1,0 +1,21 @@
+---
+- name: apply common configuration to all nodes
+  hosts: all
+  remote_user: root
+
+  roles:
+    - common
+
+- name: configure and install the k3s master
+  hosts: master
+  remote_user: root
+
+  roles:
+    - master
+
+- name: configure and install the k3s worker
+  hosts: worker
+  remote_user: root
+
+  roles:
+    - worker
