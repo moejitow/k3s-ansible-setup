@@ -1,0 +1,7 @@
+---
+
+- name: Install and configure NTP
+  include_tasks: ntp.yaml
+
+- name: Install and configure unattended-upgrades
+  include_tasks: unattended-upgrades.yaml

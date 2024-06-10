@@ -1,0 +1,13 @@
+---
+
+- name: Ensure NTP is installed
+  apt:
+    name: ntp
+    state: present
+    update_cache: yes
+
+- name: Ensure NTP service is enabled and started
+  systemd:
+    name: ntp
+    enabled: yes
+    state: started
