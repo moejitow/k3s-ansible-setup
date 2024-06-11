@@ -1,4 +1,14 @@
 ---
+
+- name: apply common configuration inside of docker container
+  hosts: localhost
+  connection: local
+  remote_user: root
+
+  roles:
+    - common
+    - master
+
 - name: apply common configuration to all nodes
   hosts: all
   remote_user: root
