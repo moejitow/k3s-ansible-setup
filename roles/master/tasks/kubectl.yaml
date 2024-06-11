@@ -1,5 +1,6 @@
 ---
 
+# TOOD: change ansible_user since remote_user is root
 - name: Create kubectl symlink
   when: lookup('fileglob', '/usr/local/bin/kubectl', errors='warn') | length == 0
   ansible.builtin.file:
