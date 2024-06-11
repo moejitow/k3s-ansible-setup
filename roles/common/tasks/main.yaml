@@ -8,3 +8,6 @@
 
 - name: Install and configure rng-tools
   include_tasks: rng-tools.yaml
+
+- name: Setup and secure ssh access
+  include_tasks: ssh.yaml
