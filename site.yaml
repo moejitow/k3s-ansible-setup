@@ -11,21 +11,24 @@
 
 - name: apply common configuration to all nodes
   hosts: all
-  remote_user: root
+  remote_user: "{{ lookup('env', 'ANSIBLE_REMOTE_USER') }}"
+  become: yes
 
   roles:
     - common
 
 - name: configure and install the k3s master
   hosts: master
-  remote_user: root
+  remote_user: "{{ lookup('env', 'ANSIBLE_REMOTE_USER') }}"
+  become: yes
 
   roles:
     - master
 
 - name: configure and install the k3s worker
   hosts: worker
-  remote_user: root
+  remote_user: "{{ lookup('env', 'ANSIBLE_REMOTE_USER') }}"
+  become: yes
 
   roles:
     - worker
