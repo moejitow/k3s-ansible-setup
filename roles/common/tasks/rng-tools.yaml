@@ -1,0 +1,22 @@
+---
+
+- name: Ensure rng-tools are installed
+  apt:
+    name: rng-tools
+    state: present
+    update_cache: yes
+
+- name: Insert/Update "HRNGDEVICE" in /etc/default/rng-tools
+  ansible.builtin.blockinfile:
+    path: /etc/default/rng-tools
+    append_newline: true
+    prepend_newline: true
+    block: |
+      HRNGDEVICE=/dev/urandom
+
+- name: Restart rng-tools.service
+  systemd:
+    name: rng-tools.service
+    state: restarted
+    enabled: yes
+

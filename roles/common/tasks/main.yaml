@@ -5,3 +5,6 @@
 
 - name: Install and configure unattended-upgrades
   include_tasks: unattended-upgrades.yaml
+
+- name: Install and configure rng-tools
+  include_tasks: rng-tools.yaml
