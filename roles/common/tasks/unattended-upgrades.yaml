@@ -8,7 +8,7 @@
 
 - name: Apply unattended-upgrades configuration
   template:
-    src: 51myunattended-upgrades.j2
+    src: 51myunattended-upgrades.js2
     dest: /etc/apt/apt.conf.d/51myunattended-upgrades
     owner: root
     group: root
